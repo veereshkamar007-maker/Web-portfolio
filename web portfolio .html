@@ -1,0 +1,561 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veeresh | Astrologer Web Designer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling --- */
+        :root {
+            --primary-color: #A06CD5; /* Deep Violet/Cosmic Purple */
+            --secondary-color: #5D5FEF; /* Darker Purple/Indigo */
+            --text-light: #E0E0E0;
+            --text-dark: #1D1D1D;
+            --bg-dark: #0A0A1F; /* Very Dark Blue/Space */
+            --bg-light: #1E1E3F;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            padding-top: 50px;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        /* --- Header/Nav --- */
+        header {
+            background: rgba(10, 10, 31, 0.95);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(160, 108, 213, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%);
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        #hero p {
+            font-size: 1.4em;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+        }
+
+        .stat-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-bar div {
+            padding: 15px 25px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .stat-bar strong {
+            display: block;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        /* --- About Section --- */
+        #about {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-stats {
+            flex: 1;
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .about-stats p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .about-stats span {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* --- Services Section --- */
+        #services {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-dark);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(160, 108, 213, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+        }
+
+        /* --- Portfolio Section --- */
+        #portfolio {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.03);
+            background: #2A2A50;
+        }
+
+        .project-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 1.4em;
+        }
+        
+        .project-card .project-mockup {
+            width: 100%;
+            height: 150px;
+            background-color: var(--bg-dark);
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            color: var(--primary-color);
+            border: 1px dashed var(--primary-color);
+        }
+        
+        .project-card .view-project-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .project-card .view-project-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* --- Testimonials Section --- */
+        #testimonials {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-dark);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            gap: 15px;
+        }
+
+        .client-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: white;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            padding: 80px 0 100px;
+            text-align: center;
+            background-color: var(--bg-dark);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-methods a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .contact-methods a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-methods img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simple mobile nav hiding for this mock-up */
+            }
+            #hero h1 {
+                font-size: 2.5em;
+            }
+            #hero p {
+                font-size: 1.1em;
+            }
+            .stat-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .contact-methods {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Veeresh</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <a href="#contact" class="cta-button">🚀 Get a Free Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Crafting Digital Destiny for Astrologers & Healers.</h1>
+            <p>Specialized Website Design & Redesign services that perfectly capture your celestial vision and attract clients.</p>
+            <a href="#portfolio" class="cta-button" style="margin-right: 20px;">View Portfolio</a>
+            <a href="#contact" style="color: white; border-bottom: 2px solid var(--primary-color);">Discuss Your Project</a>
+            
+            <div class="stat-bar">
+                <div><strong>1 Year+</strong> Experience in Web Design</div>
+                <div><strong>25+</strong> Projects Completed</div>
+                <div><strong>Niche Focus</strong> Astrology & Tarot</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me: Veeresh</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm **Veeresh**, an 18-year-old web designer with over 1 year of hands-on experience focused on bringing the unique energy of astrology and spiritual practices online.</p>
+                    <p>My journey started with a fascination for design and a keen interest in the cosmic world. I realized that many astrologers and healers have powerful services, but their websites don't reflect their true potential. That's where I step in.</p>
+                    <p>My Mission: To design intuitive, beautiful, and high-converting websites that are aligned with your unique astrological brand, helping you focus on your readings, not your code.</p>
+                </div>
+                <div class="about-stats">
+                    <h3>Key Details</h3>
+                    <p>Age: <span>18</span></p>
+                    <p>Experience: <span>1+ Years</span></p>
+                    <p>Projects Done: <span>25+</span></p>
+                    <p>Specialty: <span>Astrology Niche Sites</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>🛠️ Services: What I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>New Website Design</h3>
+                    <p>Full end-to-end design and development, from concept to launch. Custom-built for your brand.</p>
+                    <p style="font-size: 0.9em; color: var(--text-light);">*Crucial for booking high-value readings and courses.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Website Redesign</h3>
+                    <p>Revamping your existing site to modern standards. Better UI/UX, faster loading, and a fresh, professional look.</p>
+                    <p style="font-size: 0.9em; color: var(--text-light);">*Improve trust, retain visitors, and boost search rankings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>🌠 Portfolio: Our Cosmic Creations</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Here are four featured projects, demonstrating range in design and focus.</p>
+            <div class="portfolio-grid">
+            
+                <div class="project-card">
+                    <div class="project-mockup">
+                        Project Preview: vishwanathguruji.com
+                    </div>
+                    <h4>Vedic Vista</h4>
+                    <p>High-impact design focusing on Vastu and specialized Poojas. Delivered a clean, authoritative brand presence.</p>
+                    <a href="https://vishwanathguruji.com/" target="_blank" class="view-project-btn">View Project &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-mockup">
+                        Project Preview: saisadhanaastrologycentre.com
+                    </div>
+                    <h4>Sai Sadhana Portal</h4>
+                    <p>E-commerce enabled platform for online consultations and detailed services list. Focused on smooth booking flow.</p>
+                    <a href="https://www.saisadhanaastrologycentre.com/" target="_blank" class="view-project-btn">View Project &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-mockup">
+                        Project Preview: bestastrologerinvijayanagar.in
+                    </div>
+                    <h4>Local Star Connect</h4>
+                    <p>SEO-optimized design built for local discovery and immediate call-to-action to maximize regional bookings.</p>
+                    <a href="https://bestastrologerinvijayanagar.in/" target="_blank" class="view-project-btn">View Project &rarr;</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-mockup">
+                        Project Preview: sridurgaanjaneyaastro.com
+                    </div>
+                    <h4>Durga Anjaneya Hub</h4>
+                    <p>Full site redesign to improve user experience (UX) and structure for complex astrological and spiritual services.</p>
+                    <a href="https://sridurgaanjaneyaastro.com/" target="_blank" class="view-project-btn">View Project &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>💬 Testimonials: Voices of Trust</h2>
+            <div class="testimonial-grid">
+                
+                <div class="testimonial-card">
+                    <p>"Veeresh is a lifesaver! My old website looked like it was from 2005. He made it modern and easy to use, especially on the phone. Clients are saying it's way better now. Highly recommend the redesign!"</p>
+                    <div class="client-info">
+                        <img src="https://i.ibb.co/gFcFJpLz/Picsart-25-12-06-17-15-10-147.png" alt="Priya K.">
+                        <span class="client-name">Harish K.</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>"He's super fast! I gave him a mess of ideas and he turned it into a perfect site for my numerology practice. Plus, he actually understands what an astrologer needs in a website, which is rare."</p>
+                    <div class="client-info">
+                        <img src="https://i.ibb.co/XfjtZwyb/Picsart-25-12-06-17-16-24-995.png" alt="Rohit M.">
+                        <span class="client-name">Rohit M.</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>"I was skeptical because he's young, but wow! The design he made for my new course sales page is fantastic. I've booked more slots this month than the last three combined. Great work, Veeresh."</p>
+                    <div class="client-info">
+                        <img src="https://i.ibb.co/ks3tt63Q/Picsart-25-12-06-17-16-39-057.png" alt="Rahul S.">
+                        <span class="client-name">Ram S.</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>"Veeresh took my vision and made it a reality. My site needed to feel mystical but still professional, and he nailed the vibe completely. He was patient with all my little changes, too!"</p>
+                    <div class="client-info">
+                        <img src="https://i.ibb.co/bjxx9m4W/Picsart-25-12-06-17-15-54-834.png" alt="Sanjay P.">
+                        <span class="client-name">Sanjay P.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>📞 Ready to Begin Your Digital Alignment?</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">Don't let an outdated website block your cosmic potential. Let's build a stunning online presence for your practice.</p>
+
+            <div class="contact-methods">
+                <a href="mailto:veereshkamar07@gmail.com">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png" alt="Email Icon" style="filter: invert(100%);">
+                    <span>veereshkamar07@gmail.com</span>
+                </a>
+                
+ 
+                </a>
+                
+                <a href="https://wa.me/918073418980" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon">
+                    <span>+91 80734 18980 (WhatsApp)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Veeresh | Specializing in Astrologer Website Design. | Built with Cosmic Code.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
